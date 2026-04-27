@@ -1,35 +1,50 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
     <title>ElectroTool Pro</title>
-    
+
     <!-- PWA Meta Tags -->
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#4f46e5">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="ЭлектроПро">
-    
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Цвет полосы состояния для Android и современных браузеров -->
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Настройки для iOS (Apple) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="ArtioApp" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <style>
-        /* Убираем лишние отступы и системное выделение */
-        body { -webkit-tap-highlight-color: transparent; }
+      body {
+        -webkit-tap-highlight-color: transparent;
+        background-color: #000000;
+      }
+      /* Добавляем отступ сверху для экранов с "челкой", если это необходимо */
+      .safe-top {
+        padding-top: env(safe-area-inset-top);
+      }
     </style>
-</head>
-<body class="bg-gray-100">
+  </head>
+  <body class="bg-black">
     <div id="root"></div>
-    
+
     <script>
-        // Регистрация Service Worker для PWA
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW error:', err));
-            });
-        }
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .catch((err) => console.log("SW error:", err));
+        });
+      }
     </script>
-</body>
+  </body>
 </html>
