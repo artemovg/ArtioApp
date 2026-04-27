@@ -1,0 +1,16 @@
+{
+    "short_name": "ЭлектроПро",
+    "name": "ElectroTool Pro: Помощник электрика",
+    "icons": [
+    {
+    "src": "https://cdn-icons-png.flaticon.com/512/2991/2991148.png",
+    "sizes": "512x512",
+    "type": "image/png",
+    "purpose": "any maskable"
+    }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#4f46e5",
+    "background_color": "#f0f2f5"
+    }
